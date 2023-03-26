@@ -14,11 +14,20 @@
         $sql = "select * from petugas where username='$username' and password='$password'";
         $result = mysqli_query($conn,$sql);
 
+        $sql1 = "select * from siswa where nis='$username' and nama='". $_POST['password']."'";
+        $result1 = mysqli_query($conn,$sql1);
+
         if ($result->num_rows > 0) {
             echo "<script> console.log('Berhasil Daftar'); </script>";
             $row = mysqli_fetch_assoc($result);
-            $_SESSION['username'] = $row["username"];
+            $_SESSION['idPetugas'] = $row["id"];
             $_SESSION['level'] = $row["level"];
+            $_SESSION['nama'] = $row["nama"];
+            header("location: dashboard.php");
+        } elseif ($result1->num_rows > 0) {
+          $row = mysqli_fetch_assoc($result1);
+            $_SESSION['idPetugas'] = $row["id"];
+            $_SESSION['level'] = '3';
             $_SESSION['nama'] = $row["nama"];
             header("location: dashboard.php");
         } else {

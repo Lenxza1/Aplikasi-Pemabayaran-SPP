@@ -3,7 +3,7 @@
     
     session_start();
 
-    $username = $_SESSION['username'];
+    $name = $_SESSION['nama'];
     $level = $_SESSION['level'];
 ?>
 
@@ -61,37 +61,37 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="siswa.php">
+              <a class="nav-link" href="siswa/siswa.php">
                 <span class="icon-bg"><i class="mdi mdi-account-multiple"></i></span>
                 <span class="menu-title">Data Siswa</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/tables/basic-table.html">
+              <a class="nav-link" href="petugas/petugas.php">
                 <span class="icon-bg"><i class="mdi mdi-account-key"></i></span>
                 <span class="menu-title">Data Petugas</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/tables/basic-table.html">
+              <a class="nav-link" href="kelas/kelas.php">
                 <span class="icon-bg"><i class="mdi mdi-library"></i></span>
                 <span class="menu-title">Data Kelas</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/tables/basic-table.html">
+              <a class="nav-link" href="spp/spp.php">
                 <span class="icon-bg"><i class="mdi mdi-library-books"></i></span>
                 <span class="menu-title">Data SPP</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/tables/basic-table.html">
+              <a class="nav-link" href="transaksi/transaksi.php">
                 <span class="icon-bg"><i class="mdi mdi-cash"></i></span>
                 <span class="menu-title">Transaksi</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/tables/basic-table.html">
+              <a class="nav-link" href="laporan.php">
                 <span class="icon-bg"><i class="mdi mdi-cash-usd"></i></span>
                 <span class="menu-title">Laporan</span>
               </a>
@@ -105,7 +105,7 @@
                         <img src="template/assets/images/faces/face28.png" alt="image">
                       </div> -->
                       <div class="sidebar-profile-text">
-                        <p class="mb-1"><?php echo $username ?></p>
+                        <p class="mb-1"><?php echo $name ?></p>
                       </div>
                     </div>
                   </div>
@@ -128,7 +128,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/tables/basic-table.html">
+              <a class="nav-link" href="transaksi/transaksi.php">
                 <span class="icon-bg"><i class="mdi mdi-cash"></i></span>
                 <span class="menu-title">Transaksi</span>
               </a>
@@ -142,7 +142,7 @@
                         <img src="template/assets/images/faces/face28.png" alt="image">
                       </div> -->
                       <div class="sidebar-profile-text">
-                        <p class="mb-1"><?php echo $username ?></p>
+                        <p class="mb-1"><?php echo $name ?></p>
                       </div>
                     </div>
                   </div>
@@ -155,6 +155,7 @@
                   <span class="menu-title">Log Out</span></a>
               </div>
             </li>
+        </nav>
         <?php } else if ($level == 3) { ?>
             <li class="nav-item">
               <a class="nav-link" href="dashboard.php">
@@ -163,7 +164,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/tables/basic-table.html">
+              <a class="nav-link" href="transaksi/transaksi.php">
                 <span class="icon-bg"><i class="mdi mdi-cash"></i></span>
                 <span class="menu-title">Riwayat</span>
               </a>
@@ -177,7 +178,7 @@
                         <img src="template/assets/images/faces/face28.png" alt="image">
                       </div> -->
                       <div class="sidebar-profile-text">
-                        <p class="mb-1"><?php echo $username ?></p>
+                        <p class="mb-1"><?php echo $_SESSION['nama'] ?></p>
                       </div>
                     </div>
                   </div>
@@ -198,7 +199,7 @@
             <?php if ($level == 1) { ?>
                 <div class="content-wrapper">
                 <center>
-                    <h4 class="alert-heading">SELAMAT DATANG, <?php echo $username ?></h4>
+                    <h4 class="alert-heading">SELAMAT DATANG, <?php echo $name ?></h4>
                     Di Sistem Pembayaran SPP.
                     <br> Semoga Hari Anda Menyenangkan.
                 </center>
@@ -206,7 +207,7 @@
           <?php } else {?>
             <div class="content-wrapper">
                 <center>
-                    <h4 class="alert-heading">SELAMAT DATANG, <?php echo $username ?></h4>
+                    <h4 class="alert-heading">SELAMAT DATANG, <?php echo $name ?></h4>
                     Di Sistem Pembayaran SPP.
                     <br> Semoga Hari Anda Menyenangkan.
                 </center>

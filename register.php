@@ -63,7 +63,7 @@
             $nama = $_POST["nama"];
             $password = md5($_POST["password"]);
         
-            $sql = "insert into petugas (username,password,nama) values ('$username','$password','$nama')";
+            $sql = "insert into petugas (username,password,nama,level) values ('$username','$password','$nama','3')";
             $result = mysqli_query($conn, $sql);
             if ($result) {
                 echo "<script> alert('Berhasil Daftar')</script>";
